@@ -6,6 +6,14 @@ import axios from "axios";
 import {format} from "timeago.js"
 import Register from './components/Register';
 import Login from './components/login';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
+axios.defaults.baseURL = 'http://www.arjitha.me:1800/api/';
 
 function App() {
 
