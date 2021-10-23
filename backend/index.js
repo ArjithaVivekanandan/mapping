@@ -3,12 +3,14 @@ const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const pinRoute = require("./routes/pin")
 const userRoute = require("./routes/user")
+const cors = require('cors')
 
 const app=express();
 
 dotenv.config();
 
 app.use(express.json())
+app.use(cors())
 
 mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true,useUnifiedTopology:true})
     .then(()=>{
