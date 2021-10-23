@@ -24,10 +24,7 @@ app.get('/',(req,res)=>{
     console.log("Hello")
 })
     
-app.use(express.static("../frontend/public"));
-app.get('*', (req, res) => {
-res.sendFile(path.resolve(__dirname, "frontend", "public", "index.html"));
-});
+
 
 
 app.listen(1800,()=>{
